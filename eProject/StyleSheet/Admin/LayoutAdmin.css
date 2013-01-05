@@ -1,0 +1,46 @@
+﻿body {
+}
+#wraper
+{
+    width: 1200px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    border: 1px Solid #000000;
+    
+}
+#header
+{
+    padding: 10px;
+    width: 100%;
+    background-color: Aqua;
+}
+
+#leftNav
+{
+    padding: 10px;
+    width: 180px;
+    float: left;
+    overflow: hidden;
+    background-color: Olive;
+}
+
+#content
+{
+    padding: 10px;
+    width: 980px;
+    min-height: 400px;
+    float: left;
+    overflow: hidden;
+    background-color: Fuchsia;
+}
+
+#footer
+{
+    padding: 10px;
+    clear: both;
+    overflow: hidden;
+    background-color: Orange;
+}

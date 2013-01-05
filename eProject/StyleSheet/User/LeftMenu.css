@@ -1,0 +1,43 @@
+﻿body {
+}
+
+#LeftMenuWrap
+{
+    padding: 5px;
+    background-color: Purple;
+}
+
+#LeftMenuWrap .Item
+{
+    margin-bottom: 10px;
+    height: 40px;
+    
+}
+
+#LeftMenuWrap .Link
+{
+    height: 30px;
+    width: 120px;
+    padding: 5px;
+    float: left;
+    background-color: White;
+    -webkit-transition: width 1s;
+    box-shadow: 1px 1px 1px 1px black;
+}
+
+#LeftMenuWrap .Triangular
+{
+    float: left;
+    width: 0px;
+    height: 34px;
+    border: 3px solid transparent;
+    border-left: 3px solid #CC3300;
+    box-shadow: 1px 1px 1px 1px black inset;
+}
+
+#LeftMenuWrap .Link:hover
+{
+    width: 150px;
+}
+
+
