@@ -3,17 +3,13 @@
 <div id="LeftMenuWrap">
     <div class="Item">
         <div class="Link">
-            <asp:LinkButton ID="LinkButton1" runat="server">some text here</asp:LinkButton>
-        </div>
-        <div class="Triangular">
+            <asp:LinkButton ID="LinkButton1" runat="server">SOME TEXT HERE</asp:LinkButton>
         </div>
     </div>
 
     <div class="Item">
         <div class="Link">
-            <asp:LinkButton ID="LinkButton2" runat="server">some text here</asp:LinkButton>
-        </div>
-        <div class="Triangular">
+            <asp:LinkButton ID="LinkButton2" runat="server">SOME TEXT HERE</asp:LinkButton>
         </div>
     </div>
 
