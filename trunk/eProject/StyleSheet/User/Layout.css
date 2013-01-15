@@ -1,5 +1,6 @@
 ﻿body {
 }
+
 #wraper
 {
     width: 1200px;
@@ -8,9 +9,8 @@
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
-    border: 1px Solid #000000;
-    
 }
+
 #header
 {
     width: 100%;
@@ -22,7 +22,6 @@
     width: 250px;
     float: left;
     overflow: hidden;
-    background-color: Olive;
 }
 
 #content
