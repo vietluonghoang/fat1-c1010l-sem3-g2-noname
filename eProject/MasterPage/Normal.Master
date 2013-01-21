@@ -4,6 +4,8 @@
 
 <%@ Register src="../UserControl/Account/Login.ascx" tagname="Login" tagprefix="uc2" %>
 
+<%@ Register src="../UserControl/User/ShoppingCart.ascx" tagname="ShoppingCart" tagprefix="uc4" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -32,7 +34,7 @@
             </asp:ContentPlaceHolder>
         </div>
         <div id="rightNav">
-        right nav
+            <uc4:ShoppingCart ID="ShoppingCart1" runat="server" />
         </div>
         <div id="footer">
         footer
