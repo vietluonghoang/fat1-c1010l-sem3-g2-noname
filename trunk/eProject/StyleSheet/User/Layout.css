@@ -1,4 +1,6 @@
-﻿body {
+﻿body 
+{
+    font-family: Candara;
 }
 
 #wraper
@@ -26,19 +28,20 @@
 
 #content
 {
-    width: 750px;
+    width: 640px;
     min-height: 400px;
     float: left;
+    padding: 5px;
     overflow: hidden;
-    background-color: Fuchsia;
 }
 
 #rightNav
 {
-    width: 200px;
+    width: 300px;
     float: right;
     overflow: hidden;
-    background-color: Green;
+    font-family: Verdana;
+    font-size: 12px;
 }
 
 #footer
