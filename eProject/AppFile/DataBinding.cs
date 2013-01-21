@@ -78,5 +78,14 @@ namespace eProject.AppFile
             Command.CommandText = query;
             Command.ExecuteNonQuery();
         }
+
+        public DataTable ExecuteStore(SqlCommand command)
+        {
+            command.Connection = Connection;
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataSet dataSet = new DataSet();
+            adapter.Fill(dataSet);
+            return dataSet.Tables[0];
+        }
     }
 }
