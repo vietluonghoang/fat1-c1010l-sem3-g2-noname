@@ -83,6 +83,8 @@ namespace eProject.UserControl.User
                 Session["MyCart"] = new AppFile.ShoppingCart();
             }
             ShowCart();
+            BookList bl = Page.Master.FindControl("ContentPlaceHolder1").FindControl("BookList1") as BookList;
+            bl.showBooks();
         }
     }
 }
