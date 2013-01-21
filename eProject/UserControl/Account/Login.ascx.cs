@@ -54,5 +54,11 @@ namespace eProject.UserControl.Account
         {
             MultiView1.SetActiveView(ViewLoginForm);
         }
+
+        protected void LoginButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
