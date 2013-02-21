@@ -89,11 +89,72 @@ create table Order_Product
 )
 Go
 
--- Stor insert order
+-- Proc insert order
 
-alter proc InsertOrder @cusId int as
+create proc InsertOrder @cusId int as
 begin
 	insert into [Order] values(@cusId,0,getdate(),null)
 	select SCOPE_IDENTITY() as id
 end
+go
 
+-- Proc insert Customer
+
+create proc InsertCus 
+	@FullName nvarchar(100),
+	@Email nvarchar(100),
+	@Password nvarchar(200),
+	@Address nvarchar(200),
+	@City nvarchar(100),
+	@Country nvarchar(200),
+	@Phone nvarchar(50) as
+begin
+	insert into Customer values(@FullName, @Email, @Password, 0, 1)
+	insert into Address values(SCOPE_IDENTITY(), @FullName, @Address, @City, @Country, @Phone)
+end
+go
+
+-- Proc get order
+
+create proc ViewOrder @orderId int as
+begin
+	select [Order].*, sum(Order_Product.Quantity) as total from [Order],Order_Product where [Order].ID = Order_Product.OrderID and Order_Product.orderID = @orderId group by Order_Product.orderID,[Order].ID,[Order].CustomerID,[Order].StatusID,[Order].CreatedOn,[Order].ShippedDate
+end
+go
+
+-- Proc statistic
+
+create proc Statistic as
+begin
+	select Category.Name, sum(Order_product.Quantity) as Total, sum(Order_product.Price*Order_Product.Quantity) as TotalPrice  from Product, Category, Order_product where Order_Product.ProductID = Product.ID and Product.SubcategoryID = Category.ID  group by Category.Name
+end
+go
+
+-- Proc statistic by date
+
+create proc StatisticByDate @sDate datetime, @eDate datetime as
+begin
+	select Product.Code, sum(Order_product.Quantity) as Total, sum(Order_product.Price*Order_Product.Quantity) as TotalPrice  from Product, Order_product, [Order] where Order_Product.ProductID = Product.ID and Order_Product.OrderId = [Order].ID and [Order].CreatedOn between @sDate and @eDate group by Product.Code
+end
+go
+
+-- proc statistic by category
+
+create proc StatisticByCat @catID int as
+begin
+	select Product.Code, sum(Order_product.Quantity) as Total, sum(Order_product.Price*Order_Product.Quantity) as TotalPrice  from Product, Order_product, [Order] where Order_Product.ProductID = Product.ID and Order_Product.OrderId = [Order].ID and Product.SubcategoryID = @catID group by Product.Code
+end
+go
+
+select 
+	[Order].ID, Customer.Email,
+	[Order].StatusID, [Order].CreatedOn, Address.City,
+	sum(Order_Product.Price * Order_Product.Quantity) as TotalPrice
+from 
+	[Order], Order_Product, Customer, Address 
+where 
+	Customer.ID = Address.CustomerID and
+	[Order].ID = Order_Product.OrderID and
+	[Order].CustomerID = Customer.ID
+group by 
+	[Order].ID, Customer.Email, [Order].StatusID, [Order].CreatedOn, Address.City
