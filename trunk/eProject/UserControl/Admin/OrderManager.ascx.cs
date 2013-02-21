@@ -5,20 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace eProject
+namespace eProject.UserControl.Admin
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class OrderManager : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void LinkButton1_Click(object sender, EventArgs e)
-        {
-            
-                TextBox1.Text = FileUpload1.FileName; 
-            
         }
     }
 }
