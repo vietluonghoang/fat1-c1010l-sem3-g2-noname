@@ -112,7 +112,7 @@ namespace eProject.AppFile
         public void Submit(int cusId, ShoppingCart cart)
         {
             DataBinding bind = new DataBinding(ConfigurationManager.ConnectionStrings["BookStorString"].ConnectionString);
-            bind.Connection.Open();
+            
             SqlCommand command = new SqlCommand();
             command.CommandType = CommandType.StoredProcedure;
             command.CommandText = "InsertOrder";
@@ -123,8 +123,11 @@ namespace eProject.AppFile
             int id = Int32.Parse(table.Rows[0][0].ToString());
             foreach (CartItem ct in cart.CartList)
             {
-                bind.ExecuteQuery("update Product set Quantity = Quantity - " + ct.Quantity + " where id = " + ct.Id);
+
+                bind.ExecuteQuery("update Product set Quantity = Quantity - " + ct.Quantity + " where id = " + ct.Id + " and Quantity > " + ct.Quantity);
                 bind.ExecuteQuery("insert into Order_Product values(" + id + "," + ct.Id + "," + ct.Price + "," + ct.Quantity + ")");
+                
+                 
                 
             }
         }
