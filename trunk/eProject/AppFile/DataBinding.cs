@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace eProject.AppFile
 {
@@ -44,6 +45,13 @@ namespace eProject.AppFile
             }
         }
 
+        public DataBinding()
+        {
+            Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["BookStorString"].ConnectionString);
+            Command = new SqlCommand();
+            Command.Connection = Connection;
+        }
+
         public bool TestConnection(String ConnectionString)
         {
             bool flag = false;
@@ -66,6 +74,7 @@ namespace eProject.AppFile
 
         public DataTable GetDataTable(string query)
         {
+            
             Command.CommandText = query;
             SqlDataAdapter adapter = new SqlDataAdapter(Command);
             DataSet dataSet = new DataSet();
@@ -75,7 +84,12 @@ namespace eProject.AppFile
 
         public void ExecuteQuery(string query)
         {
+            if (Connection.State == System.Data.ConnectionState.Closed)
+            {
+                Connection.Open();
+            }
             Command.CommandText = query;
+            Command.Connection = Connection;
             Command.ExecuteNonQuery();
         }
 
