@@ -18,8 +18,7 @@ namespace eProject.UserControl.User
 
         public void showBooks()
         {
-            AppFile.DataBinding bind = new AppFile.DataBinding(ConfigurationManager.ConnectionStrings["BookStorString"].ConnectionString);
-            bind.Connection.Open();
+            AppFile.DataBinding bind = new AppFile.DataBinding();
             DataTable table = bind.GetDataTable("Select * from Product where Available = 'True'");
             GridViewBooks.DataSource = table;
             GridViewBooks.DataBind();
@@ -35,7 +34,7 @@ namespace eProject.UserControl.User
                 if (quantity == 0)
                 {
                     e.Row.Cells[2].Controls.Clear();
-                    e.Row.Cells[2].Text = "out of stock";
+                    e.Row.Cells[2].Text = "running out";
                     lbtnAdd.Visible = false;
                 }
                 

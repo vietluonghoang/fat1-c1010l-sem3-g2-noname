@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -48,31 +49,56 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.Web.UI, Version=2010.3.1109.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminForm\EditCategory.aspx" />
+    <Content Include="AdminForm\EditProduct.aspx" />
+    <Content Include="AdminForm\ManageCategory.aspx" />
+    <Content Include="AdminForm\ManageOrder.aspx" />
+    <Content Include="AdminForm\ManageProduct.aspx" />
+    <Content Include="AdminForm\ManageUser.aspx" />
+    <Content Include="AdminForm\Statistic.aspx" />
+    <Content Include="AdminForm\StatisticByCategory.aspx" />
     <Content Include="App_Data\ASPNETDB.MDF" />
     <Content Include="App_Data\aspnetdb_log.ldf">
       <DependentUpon>ASPNETDB.MDF</DependentUpon>
     </Content>
     <Content Include="bin\eProject.dll" />
     <Content Include="bin\eProject.pdb" />
+    <Content Include="Default.aspx" />
     <Content Include="obj\Debug\eProject.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\eProject.dll" />
     <Content Include="obj\Debug\eProject.pdb" />
+    <Content Include="Resource\icon\banner.jpg" />
     <Content Include="Resource\icon\checkbox_checked.png" />
+    <Content Include="Resource\icon\coollogo_com-1279866.png" />
+    <Content Include="Resource\icon\header.png.png" />
     <Content Include="Resource\icon\pencil.png" />
     <Content Include="Resource\icon\round_delete.png" />
     <Content Include="Resource\icon\shop_cart.png" />
     <Content Include="Resource\icon\trash.png" />
-    <Content Include="StyleSheet\Account\Login.css" />
+    <Content Include="StyleSheet\Account\userPane.css" />
     <Content Include="StyleSheet\Admin\LayoutAdmin.css" />
+    <Content Include="StyleSheet\User\Banner.css" />
     <Content Include="StyleSheet\User\Layout.css" />
     <Content Include="StyleSheet\User\LeftMenu.css" />
-    <Content Include="User.aspx" />
-    <Content Include="UserControl\Account\Login.ascx" />
+    <Content Include="StyleSheet\User\Cart.css" />
+    <Content Include="UserControl\Account\UserPane.ascx" />
+    <Content Include="UserControl\Admin\LeftMenuAdmin.ascx" />
+    <Content Include="UserControl\Admin\OrderManager.ascx" />
+    <Content Include="UserControl\Admin\StatisticByCat.ascx" />
+    <Content Include="UserControl\Admin\StatisticCategory.ascx" />
+    <Content Include="UserControl\Footer.ascx" />
+    <Content Include="UserControl\Header.ascx" />
+    <Content Include="UserControl\User\Banner.ascx" />
     <Content Include="UserControl\User\BookList.ascx" />
     <Content Include="UserControl\User\LeftMenu.ascx" />
     <Content Include="UserControl\User\ShoppingCart.ascx" />
+    <Content Include="UserForm\Login.aspx" />
+    <Content Include="UserForm\SignUp.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -85,9 +111,73 @@
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminForm\EditCategory.aspx.cs">
+      <DependentUpon>EditCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminForm\EditCategory.aspx.designer.cs">
+      <DependentUpon>EditCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm\EditProduct.aspx.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminForm\EditProduct.aspx.designer.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm\ManageCategory.aspx.cs">
+      <DependentUpon>ManageCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminForm\ManageCategory.aspx.designer.cs">
+      <DependentUpon>ManageCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm\ManageOrder.aspx.cs">
+      <DependentUpon>ManageOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminForm\ManageOrder.aspx.designer.cs">
+      <DependentUpon>ManageOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm\ManageProduct.aspx.cs">
+      <DependentUpon>ManageProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminForm\ManageProduct.aspx.designer.cs">
+      <DependentUpon>ManageProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm\ManageUser.aspx.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminForm\ManageUser.aspx.designer.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm\Statistic.aspx.cs">
+      <DependentUpon>Statistic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminForm\Statistic.aspx.designer.cs">
+      <DependentUpon>Statistic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm\StatisticByCategory.aspx.cs">
+      <DependentUpon>StatisticByCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminForm\StatisticByCategory.aspx.designer.cs">
+      <DependentUpon>StatisticByCategory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AppFile\CartItem.cs" />
     <Compile Include="AppFile\DataBinding.cs" />
+    <Compile Include="AppFile\MenuItem.cs" />
     <Compile Include="AppFile\ShoppingCart.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -103,19 +193,61 @@
       <DependentUpon>Normal.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.aspx.cs">
-      <DependentUpon>User.aspx</DependentUpon>
+    <Compile Include="UserControl\Account\UserPane.ascx.cs">
+      <DependentUpon>UserPane.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="User.aspx.designer.cs">
-      <DependentUpon>User.aspx</DependentUpon>
+    <Compile Include="UserControl\Account\UserPane.ascx.designer.cs">
+      <DependentUpon>UserPane.ascx</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\Account\Login.ascx.cs">
-      <DependentUpon>Login.ascx</DependentUpon>
+    <Compile Include="UserControl\Admin\LeftMenuAdmin.ascx.cs">
+      <DependentUpon>LeftMenuAdmin.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserControl\Account\Login.ascx.designer.cs">
-      <DependentUpon>Login.ascx</DependentUpon>
+    <Compile Include="UserControl\Admin\LeftMenuAdmin.ascx.designer.cs">
+      <DependentUpon>LeftMenuAdmin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Admin\OrderManager.ascx.cs">
+      <DependentUpon>OrderManager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Admin\OrderManager.ascx.designer.cs">
+      <DependentUpon>OrderManager.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Admin\StatisticByCat.ascx.cs">
+      <DependentUpon>StatisticByCat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Admin\StatisticByCat.ascx.designer.cs">
+      <DependentUpon>StatisticByCat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Admin\StatisticCategory.ascx.cs">
+      <DependentUpon>StatisticCategory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Admin\StatisticCategory.ascx.designer.cs">
+      <DependentUpon>StatisticCategory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\User\Banner.ascx.cs">
+      <DependentUpon>Banner.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\User\Banner.ascx.designer.cs">
+      <DependentUpon>Banner.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControl\User\BookList.ascx.cs">
       <DependentUpon>BookList.ascx</DependentUpon>
@@ -138,6 +270,20 @@
     <Compile Include="UserControl\User\ShoppingCart.ascx.designer.cs">
       <DependentUpon>ShoppingCart.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserForm\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserForm\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm\SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserForm\SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -147,12 +293,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AdminForm\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="Resource\Upload\images\" />
     <Folder Include="Resource\Upload\thumbnail\" />
-    <Folder Include="UserControl\Admin\" />
-    <Folder Include="UserForm\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage\Normal.Master" />

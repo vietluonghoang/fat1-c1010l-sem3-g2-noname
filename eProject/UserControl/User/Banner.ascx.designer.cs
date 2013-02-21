@@ -10,6 +10,6 @@
 namespace eProject.UserControl.User {
     
     
-    public partial class LeftMenu {
+    public partial class Banner {
     }
 }

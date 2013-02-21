@@ -40,13 +40,13 @@ namespace eProject.MasterPage {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// Login1 control.
+        /// Header1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::eProject.UserControl.Account.Login Login1;
+        protected global::eProject.UserControl.Header Header1;
         
         /// <summary>
         /// LeftMenu1 control.
@@ -56,6 +56,15 @@ namespace eProject.MasterPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::eProject.UserControl.User.LeftMenu LeftMenu1;
+        
+        /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
         /// ContentPlaceHolder1 control.
@@ -74,5 +83,23 @@ namespace eProject.MasterPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::eProject.UserControl.User.ShoppingCart ShoppingCart1;
+        
+        /// <summary>
+        /// Footer1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::eProject.UserControl.Footer Footer1;
+        
+        /// <summary>
+        /// Banner1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::eProject.UserControl.User.Banner Banner1;
     }
 }

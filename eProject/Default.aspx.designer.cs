@@ -7,9 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace eProject.UserControl.User {
+namespace eProject {
     
     
-    public partial class LeftMenu {
+    public partial class Default {
+        
+        /// <summary>
+        /// BookList1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::eProject.UserControl.User.BookList BookList1;
     }
 }
